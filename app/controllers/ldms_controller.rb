@@ -1,0 +1,2 @@
+class LdmsController < ApplicationController
+end
