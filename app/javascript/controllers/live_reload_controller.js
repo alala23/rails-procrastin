@@ -18,7 +18,11 @@ export default class extends Controller {
 
   updateHtml() {
     let html = this.rawHtml;
+    if (!html) return;
+
     const variables = html.match(/(?<={{{)\w+(?=}}})/g); // matches all variable in raw HTML
+    if (!variables) return;
+
     variables.forEach((variable) => {
       const input = this.inputTargets.find(input => input.name === variable); // find input with variable name
       if (input) {
