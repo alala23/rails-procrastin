@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def text
+
   end
 
   def openai
