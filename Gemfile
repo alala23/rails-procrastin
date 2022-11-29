@@ -78,3 +78,4 @@ group :test do
 end
 
  gem 'jquery-rails'
+gem "ruby-openai"
