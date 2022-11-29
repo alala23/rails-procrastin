@@ -1,0 +1,22 @@
+<!-- app/views/pages/text.html.erb -->
+<% raw_html ='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">...</html>'%>
+<div class="container-fluid" data-controller="live-reload" data-live-reload-raw-html="<%= raw_html %>">
+  <div class="row">
+    <div class="col-6">
+     <%= form_with do %>
+  <div class="form-group">
+    <%= label_tag :object %>
+    <%= text_field_tag :object, 'Objet de la lettre', class: "form-control", data: { action: "keyup->live-reload#displayHtml" } %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :text_content %>
+    <%= text_area_tag :text_content, "Content de la lettre", class: "form-control", rows: "8", data: { action: "keyup->live-reload#displayHtml" } %>
+  </div>
+<% end %>
+    </div>
+    <div class="col-6">
+      <iframe id="preview" data-live-reload-target="preview" class="w-100 border"></iframe>
+    </div>
+  </div>
+</div>
